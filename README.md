@@ -10,6 +10,7 @@ A self-hosted, speedtest.net-style web page that measures ping, jitter, download
 | `gunicorn.py` | Production wrapper (binds `0.0.0.0`) |
 | `static/` | `index.html`, `style.css`, `app.js` |
 | `requirements.txt` | Dependencies |
+| `.env.example` | Sample configuration |
 
 ## Run
 
@@ -23,7 +24,9 @@ Open `http://<server-lan-ip>:8080` from any device on the network. The URLs are 
 
 > Always start with `python gunicorn.py`. Do not run `gunicorn main:app` in this folder: the file name shadows the real `gunicorn` package (the wrapper handles this). On Windows it falls back to `waitress`.
 
-## Configuration (environment variables)
+## Configuration (environment variables or `.env`)
+
+Copy `.env.example` to `.env` to configure. Real environment variables override the file.
 
 | Variable | Default | Description |
 |----------|---------|-------------|
